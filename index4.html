@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .error,
+      .success {
+        color: red;
+        font-size: 24px;
+        font-weight: bold;
+        display: none;
+      }
+
+      .success {
+          color: green;
+      }
+
+      button {
+          transition: opacity 1s;
+      }
+
+      .disabled  {
+          opacity: 0.2;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="name" id="name" />
+    <input type="text" placeholder="age" id="age" />
+    <input type="text" placeholder="price" id="price" />
+
+    <span class="error"></span>
+    <span class="success"></span>
+
+    <button id="check">Check form</button>
+    <button id="randomPrice">Add random price</button>
+
+    <script>
+      document.getElementById("randomPrice").onclick = function() {
+        document.getElementById("price").value = Math.random();
+      };
+
+      // document.querySelector("#check") === document.getElementById("check")
+      document.getElementById("check").onclick = function() {
+        if (document.getElementById("name").value.length === 0) {
+          document.querySelector(".error").style.display = "block";
+          document.querySelector(".error").innerHTML = "Name error";
+
+          return;
+        }
+
+        if (document.getElementById("age").value.length === 0) {
+          document.querySelector(".error").style.display = "block";
+          document.querySelector(".error").innerHTML = "Age error";
+          return;
+        }
+
+        document.querySelector(".error").style.display = "none";
+        document.querySelector(".success").innerHTML = "Form is ok to be sent";
+        document.querySelector(".success").style.display = "block";
+        document.getElementById("check").className = "disabled"
+      };
+    </script>
+  </body>
+</html>

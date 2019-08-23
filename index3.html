@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="">Lorem, ipsum.</a></li>
+        <li><a href="">Perferendis, qui.</a></li>
+        <li><a href="">Repellendus, ex?</a></li>
+        <li><a href="">Doloribus, vel?</a></li>
+        <li><a href="">Et, hic.</a></li>
+      </ul>
+    </nav>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta autem
+      sapiente mollitia eligendi reiciendis consequuntur quisquam assumenda esse
+      quae doloribus a, vitae nostrum veritatis. Perferendis ut at unde
+      doloremque et!
+    </p>
+    <p>
+      Voluptates quaerat, tenetur voluptate numquam cupiditate animi non
+      accusantium praesentium natus, incidunt officiis quae voluptatum debitis
+      ut adipisci, placeat excepturi architecto rem necessitatibus eius? Impedit
+      officia repudiandae doloribus error vitae.
+    </p>
+    <p>
+      Ut inventore asperiores aliquid fugiat voluptates quas nisi, quibusdam
+      saepe in molestiae laudantium assumenda mollitia aliquam obcaecati. Est
+      nostrum nisi maxime asperiores neque. Facere quasi similique doloribus
+      omnis modi pariatur?
+    </p>
+    <p>
+      Fugit qui amet ipsa! Corporis ut in alias tenetur qui voluptate facere
+      neque magnam reiciendis nemo, labore voluptates eum hic ab error
+      accusamus, commodi dolore. Corporis rerum perferendis atque quis?
+    </p>
+    <p>
+      Veniam, eveniet consequuntur perferendis deserunt veritatis eum error,
+      praesentium corporis, minus magni corrupti nemo voluptates! Harum
+      perspiciatis dolores placeat quasi, nostrum nobis ipsa ullam sint ex?
+      Dolorum optio sit facere.
+    </p>
+    <p>
+      Earum praesentium nemo, expedita quis atque laboriosam. Id nulla ducimus
+      obcaecati qui esse eveniet tempora distinctio, adipisci doloremque.
+      Eveniet fugit placeat magni error similique ratione iusto tempora odio
+      sunt harum.
+    </p>
+
+    <button id="change">Change paragraph color</button>
+
+    <footer>
+      copyright
+    </footer>
+
+    <script>
+      document.querySelector("#change").onclick = function() {
+        for (var i = 0; i < document.querySelectorAll("p").length; i++) {
+          if (Math.random() > 0.5) {
+            document.querySelectorAll("p")[i].style.color = "red";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

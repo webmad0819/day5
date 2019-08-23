@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      ol,
+      ul {
+        list-style: none;
+      }
+      blockquote,
+      q {
+        quotes: none;
+      }
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      html,
+      body {
+        overflow: hidden;
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      section {
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+      }
+
+      div {
+        margin-left: 300px;
+        height: 300px;
+        width: 300px;
+        background: red;
+      }
+
+      button {
+        font-size: 50px;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <button id="test">Rotate!</button>
+
+      <div id="rotating-box"></div>
+    </section>
+
+    <script>
+      function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+      let rotation = 0;
+
+      document.querySelector("#test").onclick = function() {
+        setInterval(() => {
+          document.querySelector(
+            "#rotating-box"
+          ).style.transform = `rotate(${(rotation += 45)}deg)`;
+
+          document.querySelector(
+            "#rotating-box"
+          ).style.backgroundColor = `rgba(${randomInt(0, 255)}, ${randomInt(
+            0,
+            255
+          )}, ${randomInt(0, 255)}, 1)`;
+        }, 1000);
+
+        // document.querySelector("#rotating-box").style.transform =
+        //     `rotate(${rotation += 45}deg)`;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .visited {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">Lorem, ipsum.</a>
+    <a href="#">Repudiandae, adipisci?</a>
+    <a href="#">Minima, aspernatur.</a>
+    <a href="#">Exercitationem, tempore.</a>
+    <a href="#">Vel, aspernatur.</a>
+
+    <div>
+      <button id="test-button">Add new attributes</button>
+      <button id="delete-button">Delete attributes</button>
+    </div>
+
+    <script>
+      document.querySelector("#test-button").onclick = function() {
+        [...document.querySelectorAll("a")].forEach(oneAnchor => {
+          oneAnchor.setAttribute("href", "http://www.amazon.co.uk");
+          oneAnchor.setAttribute("class", "visited");
+        });
+      };
+
+      document.querySelector("#delete-button").onclick = function() {
+        [...document.querySelectorAll("a")].forEach(oneAnchor => {
+          oneAnchor.removeAttribute("class");
+        });
+      };
+    </script>
+  </body>
+</html>
